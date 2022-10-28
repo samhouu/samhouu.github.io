@@ -1,21 +1,61 @@
-body{
+.container{
+    width: 100vw;
+    height: 100vh;
     display: grid;
     place-content: center;
-    background-color: rgb(255, 255, 255);
 }
-table{
-    width: 10vw;
-    height: 25vh;
+
+.container .first-section, .container .second-section, .container .third-section{
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 1rem;
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    grid-gap: 15px;
+}
+
+.gray{
+    height: 20px;
+    width: 20px;
     background: gray;
-    border-collapse: collapse;
-    text-align: center;
 }
 
-
-tr, td {
-    border: 0.2px solid black;
-    text-align: left;
-    vertical-align: middle
+.white{
+    height: 20px;
+    width: 20px;
+    background: white;
 }
 
-tr:hover {background-color: coral;}
+label{
+    position: absolute;
+    width: 45px;
+    height: 22px;
+    right: 20px;
+    top: 20px;
+    border: 2px solid;
+    border-radius: 20px;
+}
+
+label:before{
+    position: absolute;
+    content: '';
+    width:20px;
+    height: 20px;
+    left: 1px;
+    top: 1px;
+    border-radius: 50%;
+    background: #000;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+label.active:before{
+    left: 24px;
+    background: #fff;
+}
+
+body.night{
+    background: #000;
+    color: #fff;
+}
